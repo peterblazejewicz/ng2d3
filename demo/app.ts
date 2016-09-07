@@ -241,8 +241,25 @@ import './demo.scss';
             [results]="single">
           </number-card>
         </div>
-      </div>
 
+        <div class="data-row">
+          <h3>
+            <span>Data</span>
+            <small>
+              <input
+                type="checkbox"
+                [checked]="realTimeData"
+                (change)="realTimeData = $event.target.checked"
+              />
+              Real-time
+            </small>
+          </h3>
+          <div class="data-content">
+            <pre *ngIf="chart.inputFormat === 'singleSeries'">{{single | json}}</pre>
+            <pre *ngIf="chart.inputFormat === 'multiSeries'">{{multi | json}}</pre>
+          </div>
+        </div>
+      </div>
       <div class="sidebar">
         <h1>
           ng2<strong>d3</strong>
@@ -259,14 +276,6 @@ import './demo.scss';
             </optgroup>
           </template>
         </select>
-
-        <h3>Data</h3>
-        <label>
-          <input type="checkbox" [checked]="realTimeData" (change)="realTimeData = $event.target.checked">
-          Real-time
-        </label> <br />
-        <pre *ngIf="chart.inputFormat === 'singleSeries'">{{single | json}}</pre>
-        <pre *ngIf="chart.inputFormat === 'multiSeries'">{{multi | json}}</pre>
 
         <h3>Options</h3>
 

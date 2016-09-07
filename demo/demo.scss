@@ -16,7 +16,11 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-      overflow: hidden;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 main {
@@ -30,7 +34,57 @@ main {
     text-align: center;
 
     .chart-view {
-      margin: 20px auto;
+      height: 70vh;
+      overflow-y: auto;
+    }
+
+    .data-row {
+      color: white;
+      background: #1b1e27;
+      height: 30vh;
+      overflow: hidden;
+      text-align: left;
+
+      .data-content {
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      h3 {
+        background: #0e1015;
+        padding: 3px 0 3px 10px;
+        display: block;
+        width: 100%;
+        margin: 0;
+        font-size: .8em;
+        text-transform: uppercase;
+        color: #a8b2c7;
+
+        height: 30px;
+        line-height: 27px;
+
+        span {
+          display: inline-block;
+          height: 30px;
+        }
+
+        small {
+          vertical-align: top;
+          display: inline-block;
+          height: 10px;
+          line-height: 30px;
+          font-size: .5em;
+        }
+      }
+
+      pre {
+        font-size: 12px;
+        line-height: 1em;
+        max-height: 400px;
+        overflow: auto;
+        padding: 15px;
+      }
     }
   }
 
@@ -43,6 +97,11 @@ main {
     color: #fff;
     font-size: .6em;
     min-width: 280px;
+
+    input[type=text],
+    select {
+      width: 100%;
+    }
 
     h1 {
       color: #1f89ff;
@@ -61,25 +120,11 @@ main {
       }
     }
 
-    input[type=text],
-    select {
-      width: 100%;
-    }
-
     h3 {
       padding: 0;
       margin: 10px 0 0 0;
       text-transform: uppercase;
       color: #a8b2c7;
-    }
-
-    pre {
-      background: #1b1e27;
-      font-size: 12px;
-      line-height: 1em;
-      max-height: 400px;
-      overflow: auto;
-      padding: 15px;
     }
   }
 }
