@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import "./rxjs-extensions";
 
 import { ChartComponent } from "./charts/chart.component";
 import { ScaleLegendComponent, LegendComponent, LegendEntryComponent } from "./legend";
